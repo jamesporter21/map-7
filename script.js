@@ -41,7 +41,7 @@ var popup = new mapboxgl.Popup({
 map.on("load", () => {
   // map.on("click", (event) => {
   //   const features = map.queryRenderedFeatures(event.point, {
-  //     layers: ["all-86q2b1"],
+  //     layers: ["all-91b1l6"],
   //   });
   //   if (!features.length) {
   //     return;
@@ -56,14 +56,14 @@ map.on("load", () => {
 
   map.addSource("counties", {
     type: "vector",
-    url: "mapbox://jamesporter21.0jao2dyh",
-    promoteId: { "all-86q2b1": "name" },
+    url: "mapbox://jamesporter21.buznx3hr",
+    promoteId: { "all-91b1l6": "name" },
   });
 
   map.addLayer({
     id: "ACTIVE BLOCKS",
     type: "fill",
-    "source-layer": "all-86q2b1",
+    "source-layer": "all-91b1l6",
     source: "counties",
     layout: {},
     paint: {
@@ -73,8 +73,8 @@ map.on("load", () => {
           "case",
           ["==", ["feature-state", "numUsers"], 2],
           "rgba(255, 0, 0, 0.0)",
-          ["get", "color"],
-          // "blue",
+          // ["get", "color"],
+          "#9B111E"
         ],
       "fill-opacity": 0.3,
     },
@@ -84,7 +84,7 @@ map.on("load", () => {
     id: "boxes-outline-layer",
     type: "line",
     visibility: "visible",
-    "source-layer": "all-86q2b1",
+    "source-layer": "all-91b1l6",
     source: "counties",
     layout: {},
     paint: {
@@ -108,7 +108,7 @@ map.on("load", () => {
   ];
   zipsArray.forEach(function (zipCode) {
     map.setFeatureState(
-      { id: zipCode, source: "counties", sourceLayer: "all-86q2b1" },
+      { id: zipCode, source: "counties", sourceLayer: "all-91b1l6" },
       { numUsers: 2 }
     );
   });
@@ -198,13 +198,13 @@ $("input[type='checkbox'][name='filter-by-first-type-input']").click(
         ];
         zipsArray.forEach(function (zipCode) {
           map.setFeatureState(
-            { id: zipCode, source: "counties", sourceLayer: "all-86q2b1" },
+            { id: zipCode, source: "counties", sourceLayer: "all-91b1l6" },
             { numUsers: 1 }
           );
         });
       } else {
         map.setFeatureState(
-          { id: currentCountry, source: "counties", sourceLayer: "all-86q2b1" },
+          { id: currentCountry, source: "counties", sourceLayer: "all-91b1l6" },
           { numUsers: 1 }
         );
       }
@@ -225,13 +225,13 @@ $("input[type='checkbox'][name='filter-by-first-type-input']").click(
         ];
         zipsArray.forEach(function (zipCode) {
           map.setFeatureState(
-            { id: zipCode, source: "counties", sourceLayer: "all-86q2b1" },
+            { id: zipCode, source: "counties", sourceLayer: "all-91b1l6" },
             { numUsers: 2 }
           );
         });
       } else {
         map.setFeatureState(
-          { id: currentCountry, source: "counties", sourceLayer: "all-86q2b1" },
+          { id: currentCountry, source: "counties", sourceLayer: "all-91b1l6" },
           { numUsers: 2 }
         );
       }
