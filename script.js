@@ -88,15 +88,15 @@ map.on("load", () => {
     source: "counties",
     layout: {},
     paint: {
-      "line-color":
+      "line-color": "red",
         // "#ffffff",
-        [
-          "case",
-          ["==", ["feature-state", "numUsers"], 2],
-          "rgba(255, 0, 0, 0.0)",
-          ["get", "color"],
-        ],
-      "line-width": 1,
+        // [
+        //   "case",
+        //   ["==", ["feature-state", "numUsers"], 2],
+        //   "rgba(255, 0, 0, 0.0)",
+        //   ["get", "color"],
+        // ],
+      "line-width": 1
     },
   });
 
